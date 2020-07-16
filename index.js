@@ -54,6 +54,15 @@ const reviews = [{ name: "Daniela", rating: 5, feedback: "Beautiful atmosphere a
 
 /* Task 3: Console.log just Julius' feedback */
 
+function nameReview(array, name) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].name === name) {
+      return array[i].feedback
+    }
+  }
+};
+
+console.log(nameReview(reviews, 'Julius'))
 
 /* Task 4: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
 
