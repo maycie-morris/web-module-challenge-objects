@@ -12,9 +12,9 @@ function createMenuItem(name, cost, category) {
 
 /* Task 1b: use your function to create 3 more menu items. You may add any items to the menu that you'd like */
 
-console.log(createMenuItem('Chicken Tikka Masala', 15, 'Dinner'));
-console.log(createMenuItem('BLT', 8, 'Lunch'));
-console.log(createMenuItem('Flan', 5, 'Dessert'));
+console.log('This is for task 1b:', createMenuItem('Chicken Tikka Masala', 15, 'Dinner'));
+console.log('This is for task 1b:', createMenuItem('BLT', 8, 'Lunch'));
+console.log('This is for task 1b:', createMenuItem('Flan', 5, 'Dessert'));
 
 
 /* Task 2: You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to your burger object that automatically calculates price given a string as a parameter. 
@@ -37,7 +37,7 @@ burger.discount = function (string) {
   }
 }
 
-console.log(burger.discount('student'));
+console.log('This is for task 2:', burger.discount('student'));
 
 
 ///////////////Reviews (MVP)///////////////////
@@ -62,7 +62,7 @@ function nameReview(array, name) {
   }
 };
 
-console.log(nameReview(reviews, 'Julius'))
+console.log('This is for task 3:', nameReview(reviews, 'Julius'))
 
 /* Task 4: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
 
@@ -71,7 +71,7 @@ function addMyReview(array, name, rating, feedback) {
   return array;
 }
 
-console.log(addMyReview(reviews, 'Maycie', 4, 'I like basically anywhere that serves food, to be honest.'));
+console.log('This is for task 4:', addMyReview(reviews, 'Maycie', 4, 'I like basically anywhere that serves food, to be honest.'));
 
 /* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays" */
 
@@ -80,7 +80,7 @@ function changeReview(array, index, feedback) {
   return array;
 }
 
-console.log(changeReview(reviews, 7, "this place is chill with really cool people, great for getting work done on weekdays"))
+console.log('This is for task 5:', changeReview(reviews, 7, "this place is chill with really cool people, great for getting work done on weekdays"))
 
 /*  Task 6: Write a function to return a review based on the index of the review in the array.
 
@@ -98,7 +98,7 @@ and should return a string in the format `{name} gave the restaurant a {rating},
 function getReviewByIndex(reviews, index) {
   return `${reviews[index].name} gave the restaurant a ${reviews[index].rating}, and their feedback was ${reviews[index].feedback}`
 }
-console.log(getReviewByIndex(reviews, 3));
+console.log('This is for task 6:', getReviewByIndex(reviews, 3));
 
 /* Task 7: Write a function to get information about the most recent review called `getLastReview`
 
@@ -114,7 +114,7 @@ function getLastReview(array) {
   let lastObj = array[array.length - 1]
   return `${lastObj.name} gave the restaurant a ${lastObj.rating}, and their feedback was: ${lastObj.feedback}`
 }
-console.log(getLastReview(reviews))
+console.log('This is for task 7:', getLastReview(reviews))
 
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
@@ -149,10 +149,17 @@ and should return an array of objects.
     {name: "Brett", rating: 3, feedback: "great selection of snacks and a nice cafe area to get work done during the day."},
     {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." }]
 */
-function getLongReviews(/* code here */) {
-  /* code here */
-}
 
+function getLongestReviews(array) {
+  const longestString = []
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].feedback.split(" ").length > 15) {
+      longestString.push(array[i])
+    }
+  }
+  return longestString
+}
+console.log('This is for stretch 2:', getLongestReviews(reviews))
 
 /* STRETCH 3:  This challenge is not related to the data above! 
 
